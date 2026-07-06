@@ -1,3 +1,6 @@
+<img width="870" height="802" alt="image" src="https://github.com/user-attachments/assets/a3e67100-665c-4106-985b-79fddb120f92" />
+
+
 # LINE OA Gemini AI Chatbot
 
 แชทบอทอัจฉริยะภาษาไทยสำหรับเชื่อมต่อบัญชี LINE Official Account (Line OA) ขับเคลื่อนหลังบ้านด้วยระบบ AI ประสิทธิภาพสูงของ Google Gemini API และรันบนเซิร์ฟเวอร์ความเร็วสูงด้วย FastAPI
