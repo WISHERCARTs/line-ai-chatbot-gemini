@@ -129,15 +129,16 @@ docker run --rm -p 8080:8080 --env-file .env line-ai-chatbot
 
 ## Deploy บน Google Cloud Run
 
-> ขั้นตอนนี้เป็นคู่มือ ยังไม่ได้ deploy ตัวอย่างจริงใน repo นี้
+deploy จริงแล้วที่ region `asia-southeast1`: https://line-ai-chatbot-618816656832.asia-southeast1.run.app/ (health check ตอบ `{"status":"running",...}`) ส่วน `/callback` ตอบเฉพาะคำขอที่มี signature ถูกต้องจาก LINE
 
-เก็บความลับใน Secret Manager แล้วผูกเข้ากับ service
+เก็บความลับใน Secret Manager แล้วผูกเข้ากับ service (`--max-instances 2` จำกัดค่าใช้จ่ายและภาระ)
 
 ```bash
 gcloud run deploy line-ai-chatbot \
   --source . \
   --region asia-southeast1 \
   --allow-unauthenticated \
+  --max-instances 2 \
   --set-secrets LINE_CHANNEL_ACCESS_TOKEN=line-token:latest,LINE_CHANNEL_SECRET=line-secret:latest,GEMINI_API_KEY=gemini-key:latest
 ```
 
